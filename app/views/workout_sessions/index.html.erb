@@ -1,0 +1,11 @@
+<h1>All Workouts</h1>
+
+<ul id="workout_sessions">
+  <% @workout_sessions.each do |workout_session| %>
+    <li>
+      <%= link_to workout_session.workout_focus, workout_session_path(workout_session) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create New Workout", new_workout_session_path, class: "new_workout_session" %>
