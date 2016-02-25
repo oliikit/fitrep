@@ -1,16 +1,17 @@
-<h1><%= @workout_session.workout_focus %></h1>
+  <h1><%= @workout_session.workout_focus %></h1>
 
-<p>Exercise: <%= @workout_session.exercises %><br>
-  Number of Sets: <%= @workout_session.sets %><br>
-  Number of Reps: <%= @workout_session.reps %><br>
-  Weight: <%= @workout_session.weight %><br>
-  Exercise Time: <%= @workout_session.exercise_time %><br></p>
+  <p>Exercise: <%= @workout_session.exercises %><br>
+    Number of Sets: <%= @workout_session.sets %><br>
 
-  <p>Workout Time: <%= @workout_session.workout_time %><br>
-    Workout Intensity: <%= @workout_session.workout_intensity %><br>
+    Number of Reps: <%= @workout_session.reps %><br>
+    Weight: <%= @workout_session.weight %><br>
+    Exercise Time: <%= @workout_session.exercise_time %><br></p>
 
-<h3>Wokout Notes: <%= @workout_session.workout_notes %><br></h2>
+    <p>Workout Time: <%= @workout_session.workout_time %><br>
+      Workout Intensity: <%= @workout_session.workout_intensity %><br>
 
-  <%= link_to "<< Back to all Workout Sessions", workout_sessions_path %>
-  <%= link_to "Delete", workout_session_path(@workout_session), method: :delete, data: {confirm: "really delete this session?"} %>
-  <%= link_to "Edit", edit_workout_session_path(@workout_session) %>
+  <h3>Wokout Notes: <%= @workout_session.workout_notes %><br></h2>
+
+    <%= link_to "<< Back to all Workout Sessions", workout_sessions_path %>
+    <%= link_to "Delete", workout_session_path(@workout_session), method: :delete, data: {confirm: "really delete this session?"} %>
+    <%= link_to "Edit", edit_workout_session_path(@workout_session) %>

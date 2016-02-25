@@ -1,31 +1,44 @@
-<h1>All Workouts</h1>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <p class="navbar-text">fitrep</p>
+    <%= link_to "Create New Workout", new_workout_session_path, class: "new_workout_session btn btn-success navbar-btn navbar-right" %>
+  </div>
+</nav>
 
-<table>
-  <% @workout_sessions.each do |workout_session| %>
-    <tr>
-        <td>
-          <div class="btn-group btn-lg btn-block" width="80%">
-            <button type="button" class="btn btn-success btn-lg">
-              <%= link_to "Workout Focus: " + workout_session.workout_focus, workout_session_path(workout_session) %>
-            </button>
-            <button type="button" class="btn btn-success btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-md-2">
+      <ul class="nav nav-pills nav-stacked">
+        <li role="presentation" class="active"><a href="#"> Dashboard </a></li>
+        <li role="presentation"><a href="#"> Reports </a></li>
+        <li role="presentation"><a href="#"> Other Future Fancy Stuff </a></li>
+      </ul>
+    </div>
+
+    <div class="col-md-9 col-md-offset-1">
+      <h1>All Workouts</h1>
+
+      <div class="list-group">
+        <% @workout_sessions.each do |workout_session| %>
+          <div class="btn-group btn-lg btn-block">
+              <%= link_to "Workout Focus: " + workout_session.workout_focus, workout_session_path(workout_session), class: "btn btn-lg list-group-item" %>
+            <button type="button" class="btn btn-lg dropdown-toggle list-group-item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="caret"></span>
             </button>
             <div class="dropdown-menu">
               <li class="dropdown-header">Brief Summary:</li>
-              <li class="disabled">
-                <a class="dropdown-item disabled" href="#">Workout Time: <%= workout_session.workout_time %></a>
+              <li class="disabled dropdown-item">
+                Workout Time: <%= workout_session.workout_time %>
               </li>
-              <li class="disabled">
-                <a class="dropdown-item disabled" href="#">Workout Intensity: <%= workout_session.workout_time %></a>
+              <li class="dropdown-item disabled">
+                Workout Intensity: <%= workout_session.workout_time %>
               </li>
               <li role="separator" class="divider"></li>
               <li><a href="#">Edit</a></li>
             </div>
           </div>
-        </td>
-    </tr>
-  <% end %>
-</table>
-
-<%= link_to "Create New Workout", new_workout_session_path, class: "new_workout_session" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
