@@ -8,8 +8,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <p class="navbar-text">fitrep</p>
+      <%= link_to "Create New Workout", new_workout_session_path, class: "new_workout_session btn btn-success navbar-btn navbar-right" %>
+    </div>
+  </nav>
 
-  <%= yield %>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="col-md-2">
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation"><%= link_to "Dashboard", workout_sessions_path %></li>
+          <li role="presentation"><a href="#"> Reports </a></li>
+          <li role="presentation"><a href="#"> Other Future Fancy Stuff </a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-8 col-md-offset-1">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+
+
 
 </body>
 </html>
