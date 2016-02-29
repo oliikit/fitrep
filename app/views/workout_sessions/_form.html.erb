@@ -17,7 +17,7 @@
           </ul>
         </div> -->
     <div class="row">
-        <form class="form-horizontal">
+
           <div class="form-group">
             <label class="col-lg-2 control-label">Workout Focus:</label>
             <div class="col-lg-8">
@@ -25,11 +25,11 @@
             </div>
           </div>
           <br><hr>
-        </form>
+
 
       <div class="row">
         <div class="col-md-6">
-          <form class="form-horizontal">
+
             <div class="form-group">
               <label class="col-lg-2 col-lg-offset-1 control-label">Exercise:</label>
               <div class="col-lg-6">
@@ -64,7 +64,7 @@
                 <%= f.text_field :exercise_time, class:'form-control pull-right' %>
               </div><br>
             </div>
-          </form>
+
         </div>
         <div class="col-md-6">
           <div class="well">Added Exercises</div>
@@ -73,32 +73,32 @@
 
       <hr>
 
-      <form class="form-horizontal">
+
         <div class="form-group">
           <label class="col-lg-2 control-label">Workout Time:</label>
           <div class="col-lg-3">
             <%= f.text_field :workout_time, class:'form-control pull-right' %>
-          </div>
-        </div>
+          </div><br>
+        </div><br>
 
         <div class="form-group">
           <label class="col-lg-2 control-label">Workout Intensity:</label>
           <div class="col-lg-3">
             <%= f.text_field :workout_intensity, class:'form-control pull-right' %>
-          </div>
-        </div>
+          </div><br>
+        </div><br>
 
         <div class="form-group">
           <label class="col-lg-2 control-label">Workout Notes:</label>
           <div class="col-lg-3">
             <%= f.text_field :workout_notes, class:'form-control pull-right' %>
           </div>
-        </div>
-      </form>
+        </div><br>
+
 
     </div>
 
   <center>
-    <%= f.submit :Submit, class:'btn btn-success' %>
+    <%= f.submit 'Submit', class:'btn btn-success' %>
   </center>
 <% end %>
