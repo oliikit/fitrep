@@ -3,17 +3,20 @@
   <div class="row">
     <div class="col-md-5 ">
       <blockquote>
-        <p><strong>Exercise:</strong> <%= @workout_session.exercises %><br>
-          <strong>Number of Sets:</strong> <%= @workout_session.sets %><br>
-          <strong>Number of Reps:</strong> <%= @workout_session.reps %><br>
-          <strong>Weight:</strong> <%= @workout_session.weight %><br>
-          <strong>Exercise Time:</strong> <%= @workout_session.exercise_time %><br></p>
+        <% @exercises.each do |e| %>
+          <p><strong>Exercise:</strong> <%= e.exercise_name %><br>
+            <strong>Number of Sets:</strong> <%= e.sets %><br>
+            <strong>Number of Reps:</strong> <%= e.reps %><br>
+            <strong>Weight:</strong> <%= e.weight %><br>
+            <strong>Exercise Time:</strong> <%= e.exercise_time %><br></p>
+        <% end %>
           <hr>
           <p><strong>Workout Time:</strong> <%= @workout_session.workout_time %><br>
             <strong>Workout Intensity:</strong> <%= @workout_session.workout_intensity %><br>
           <hr>
         <p><strong>Wokout Notes:</strong> <%= @workout_session.workout_notes %><br></p>
       </blockquote>
+
     </div>
     <div class="col-md-3 col-md-push-2">
       <%= link_to "Edit", edit_workout_session_path(@workout_session), class:'btn btn-primary' %>
