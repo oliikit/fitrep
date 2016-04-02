@@ -29,42 +29,42 @@
 
       <div class="row">
         <div class="col-md-6">
-
-          <div class="form-group">
+          <%= f.fields_for :exercises do |builder| %>
+            <div class="form-group">
               <label class="col-lg-2 col-lg-offset-1 control-label">Exercise:</label>
               <div class="col-lg-6">
-                <%= f.text_field :exercise.exercise_name, class:'form-control pull-right' %>
+                <%= builder.text_field :exercise_name, class:'form-control pull-right' %>
               </div><br>
             </div>
 
             <div class="form-group">
               <label class="col-lg-2 col-lg-offset-1 control-label">Sets:</label>
               <div class="col-lg-6">
-                <%= f.text_field :exercise.sets, class:'form-control pull-right' %>
+                <%= builder.text_field :sets, class:'form-control pull-right' %>
               </div><br>
             </div>
 
             <div class="form-group">
               <label class="col-lg-2 col-lg-offset-1 control-label">Repetitions:</label>
               <div class="col-lg-6">
-                <%= f.text_field :exercise.reps, class:'form-control pull-right' %>
+                <%= builder.text_field :reps, class:'form-control pull-right' %>
               </div><br>
             </div>
 
             <div class="form-group">
               <label class="col-lg-2 col-lg-offset-1 control-label">Weight:</label>
               <div class="col-lg-6">
-                <%= f.text_field :exercise.weight, class:'form-control pull-right' %>
+                <%= builder.text_field :weight, class:'form-control pull-right' %>
               </div><br>
             </div>
 
             <div class="form-group">
               <label class="col-lg-2 col-lg-offset-1 control-label">Exercise Time:</label>
               <div class="col-lg-6">
-                <%= f.text_field :exercise.exercise_time, class:'form-control pull-right' %>
+                <%= builder.text_field :exercise_time, class:'form-control pull-right' %>
               </div><br>
             </div>
-
+          <% end %>
         </div>
         <div class="col-md-6">
           <div class="well">Added Exercises</div>

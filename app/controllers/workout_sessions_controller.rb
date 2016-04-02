@@ -12,11 +12,14 @@ class WorkoutSessionsController < ApplicationController
 
   def new
     @workout_session = WorkoutSession.new
+    @workout_session.exercises.build
   end
 
   def create
     @workout_session = WorkoutSession.new(workout_session_params)
+    @exercise = @workout_session.exercises.build
     @workout_session.save
+    @exercise.save
     redirect_to workout_session_path(@workout_session)
   end
 
@@ -37,4 +40,10 @@ class WorkoutSessionsController < ApplicationController
 
     redirect_to workout_session_path(@workout_session)
   end
+
+  private
+    def workout_session_params
+      params.require(:workout_session).permit(:workout_notes,:workout_focus, :workout_intensity, :workout_time,
+                      exercises_attributes:[:id, :workout_session_id, :exercise_name, :sets, :reps, :weight, :exercise_time])
+    end
 end

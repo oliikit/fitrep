@@ -6,6 +6,8 @@ class ExercisesController < ApplicationController
 
   def create
     @exercise = WorkoutSession.Exercise.new(exercise_params)
-    @exercises.save
+    @exercise.each do |e|
+      e.save
+    end
   end
 end
