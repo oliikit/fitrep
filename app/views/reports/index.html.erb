@@ -1,1 +1,46 @@
 <h1>Shows an Overview of Stats</h1>
+
+<h2>Overall Workout Time - Area Chart</h2>
+<p>Graph box that highlights over points show the exercises</p>
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-1">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Work In Progress: Area Chart
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div id="morris-workout-time"></div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+</div>
+
+<h2>Workout Focus - Donut Chart </h2>
+<p>Show the percentages of all the workouts</p>
+
+
+<script>
+new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'morris-workout-time',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: [
+    { year: '2008', value: 20 },
+    { year: '2009', value: 10 },
+    { year: '2010', value: 5 },
+    { year: '2011', value: 5 },
+    { year: '2012', value: 20 }
+  ],
+  // The name of the data record attribute that contains x-values.
+  xkey: 'year',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Value']
+});
+</script>
