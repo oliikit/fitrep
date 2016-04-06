@@ -1,4 +1,5 @@
 class ReportsController < ApplicationController
+  include ReportsHelper
 
   def index
     @workout_sessions = WorkoutSession.all
@@ -8,5 +9,7 @@ class ReportsController < ApplicationController
     @workout_session = WorkoutSession.find(params[:id])
     @exercises = @workout_session.exercises
   end
+
+
 
 end
