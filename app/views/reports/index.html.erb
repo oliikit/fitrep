@@ -1,0 +1,25 @@
+<h1>Workout Overview</h1>
+
+<div class="row">
+    <div class="col-lg-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              Overall Workout Time
+            </div>
+            <div class="panel-body">
+              <%= content_tag :div, "", id: "workout-time-chart", data: {workout_sessions: time_data} %>
+            </div>
+        </div>
+      </div>
+
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              Workout Focus
+            </div>
+            <div class="panel-body">
+              <%= content_tag :div, "", id: "focus-chart", data: {focus: WorkoutSession.group(:workout_focus).count} %>
+            </div>
+        </div>
+    </div>
+  </div>

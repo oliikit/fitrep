@@ -1,4 +1,4 @@
-module WorkoutSessionsHelper
+module ReportsHelper
 
   def time_data
     (1.week.ago.to_date..Date.today).map do |date|

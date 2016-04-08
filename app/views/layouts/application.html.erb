@@ -20,12 +20,12 @@
       <div class="col-md-2">
         <ul class="nav nav-pills nav-stacked">
           <li role="presentation"><%= link_to "Dashboard", workout_sessions_path %></li>
-          <li role="presentation"><a href="#"> Reports </a></li>
+          <li role="presentation"><%= link_to "Reports", reports_path %></li>
           <li role="presentation"><a href="#"> Other Future Fancy Stuff </a></li>
         </ul>
       </div>
 
-      <div class="col-md-8 col-md-offset-1">
+      <div class="col-md-9 col-md-offset-1">
         <%= yield %>
       </div>
     </div>
