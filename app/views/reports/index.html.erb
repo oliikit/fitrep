@@ -1,22 +1,25 @@
-<h1>Shows an Overview of Stats</h1>
+<h1>Workout Overview</h1>
 
-<h2>Overall Workout Time - Area Chart</h2>
-<p>Graph box that highlights over points show the exercises</p>
 <div class="row">
-    <div class="col-lg-8 col-lg-offset-1">
+    <div class="col-lg-5">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Work In Progress: Area Chart
+              Overall Workout Time
             </div>
-            <!-- /.panel-heading -->
             <div class="panel-body">
               <%= content_tag :div, "", id: "workout-time-chart", data: {workout_sessions: time_data} %>
             </div>
-            <!-- /.panel-body -->
         </div>
-        <!-- /.panel -->
-    </div>
-</div>
+      </div>
 
-<h2>Workout Focus - Donut Chart </h2>
-<p>Show the percentages of all the workouts</p>
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+              Workout Focus
+            </div>
+            <div class="panel-body">
+              <%= content_tag :div, "", id: "focus-chart", data: {focus: WorkoutSession.group(:workout_focus).count} %>
+            </div>
+        </div>
+    </div>
+  </div>
