@@ -20,38 +20,29 @@
 
     <!--Overall Workout Information -->
     <div class="row">
-      <h2>Overall Workout Information</h2>
-      <%= f.inputs do %>
-        <%= f.input :workout_focus, :label => "Focus" %>
-        <%= f.input :workout_time, :label => "Overall Time"%>
-        <%= f.input :workout_intensity, :label => "Intensity" %>
-        <%= f.input :workout_notes, :label => "Notes" %>
-      <% end %>
-      <hr>
+
+        <h2>Overall Workout Information</h2>
+        <%= f.inputs do %>
+          <%= f.input :workout_focus, :label => "Focus" %>
+          <%= f.input :workout_time, :label => "Overall Time"%>
+          <%= f.input :workout_intensity, :label => "Intensity" %>
+          <%= f.input :workout_notes, :label => "Notes" %>
+        <% end %>
+        <hr>
+
     </div>
 
     <!-- Exercises -->
     <div class="row">
       <div class="col-md-10">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Exercise</th>
-              <th>Sets</th>
-              <th>Repetitions</th>
-              <th>Weight</th>
-              <th>Time</th>
-              <th></th>
-            </tr>
-          </thead>
-        </table>
-
-            <%= f.fields_for :exercises do |exercise| %>
+        <h2> Add Exercise </h2>
+          <div id='exercises'>
+            <%= f.semantic_fields_for :exercises do |exercise| %>
               <%= render 'exercise_fields', :f => exercise %>
             <% end %>
-
-        <div class='links'>
-            <%= link_to_add_association 'add', f, :exercises %>
+            <div class='links'>
+              <%= link_to_add_association 'add', f, :exercises %>
+            </div>
           </div>
       </div>
     </div>
