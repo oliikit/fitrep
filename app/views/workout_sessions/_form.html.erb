@@ -40,30 +40,16 @@
               <th>Repetitions</th>
               <th>Weight</th>
               <th>Time</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             <%= f.fields_for :exercises do |builder| %>
-              <tr>
-                <td>
-                  <%= builder.text_field :exercise_name, class:'form-control pull-right' %>
-                </td>
-                <td>
-                  <%= builder.text_field :sets, class:'form-control pull-right' %>
-                </td>
-                <td>
-                  <%= builder.text_field :reps, class:'form-control pull-right' %>
-                </td>
-                <td>
-                  <%= builder.text_field :weight, class:'form-control pull-right' %>
-                </td>
-                <td>
-                  <%= builder.text_field :exercise_time, class:'form-control pull-right' %>
-                </td>
-              </tr>
+              <%= render 'exercise_fields', f: builder %>
             <% end %>
           </tbody>
         </table>
+        <%= link_to_add_fields "Add", f, :exercises %>
       </div>
     </div>
 
