@@ -1,9 +1,9 @@
-<%= form_for @workout_session do |f| %>
-  <ul>
+<%= semantic_form_for @workout_session do |f| %>
+  <!-- <ul>
   <% @workout_session.errors.full_messages.each do |error| %>
     <li><%= error %></li>
   <% end %>
-  </ul>
+</ul> -->
 
     <!--  To be included for dynamic content:
       <div class="input-group">
@@ -18,15 +18,16 @@
           </ul>
         </div> -->
 
-    <!--Header Workout Information -->
+    <!--Overall Workout Information -->
     <div class="row">
-      <div class="form-group">
-        <label class="col-lg-1 control-label">Workout Focus:</label>
-        <div class="col-lg-9">
-          <%= f.text_field :workout_focus, class:'form-control pull-right', placeholder: "Main Focus" %>
-        </div>
-      </div>
-      <br><hr>
+      <h2>Overall Workout Information</h2>
+      <%= f.inputs do %>
+        <%= f.input :workout_focus, :label => "Focus" %>
+        <%= f.input :workout_time, :label => "Overall Time"%>
+        <%= f.input :workout_intensity, :label => "Intensity" %>
+        <%= f.input :workout_notes, :label => "Notes" %>
+      <% end %>
+      <hr>
     </div>
 
     <!-- Exercises -->
@@ -55,34 +56,7 @@
       </div>
     </div>
 
-    <hr>
-
-    <div class="row">
-      <div class="col-md-8">
-        <div class="form-group">
-          <label class="col-lg-2 control-label">Workout Time:</label>
-          <div class="col-lg-3">
-            <%= f.text_field :workout_time, class:'form-control pull-right' %>
-          </div><br>
-        </div><br>
-
-        <div class="form-group">
-          <label class="col-lg-2 control-label">Workout Intensity:</label>
-          <div class="col-lg-3">
-            <%= f.text_field :workout_intensity, class:'form-control pull-right' %>
-          </div><br>
-        </div><br>
-
-        <div class="form-group">
-          <label class="col-lg-2 control-label">Workout Notes:</label>
-          <div class="col-lg-3">
-            <%= f.text_field :workout_notes, class:'form-control pull-right' %>
-          </div>
-        </div><br>
-      </div>
-    </div>
-
   <center>
-    <%= f.submit 'Submit', class:'btn btn-success' %>
+    <%= f.actions :submit, :cancel %>
   </center>
 <% end %>
