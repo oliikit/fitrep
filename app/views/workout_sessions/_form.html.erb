@@ -1,4 +1,4 @@
-<%= form_for(@workout_session) do |f| %>
+<%= form_for @workout_session do |f| %>
   <ul>
   <% @workout_session.errors.full_messages.each do |error| %>
     <li><%= error %></li>
@@ -43,13 +43,15 @@
               <th></th>
             </tr>
           </thead>
-          <tbody>
-            <%= f.fields_for :exercises do |builder| %>
-              <%= render 'exercise_fields', f: builder %>
-            <% end %>
-          </tbody>
         </table>
-        <%= link_to_add_fields "Add", f, :exercises %>
+
+            <%= f.fields_for :exercises do |exercise| %>
+              <%= render 'exercise_fields', :f => exercise %>
+            <% end %>
+
+        <div class='links'>
+            <%= link_to_add_association 'add', f, :exercises %>
+          </div>
       </div>
     </div>
 
