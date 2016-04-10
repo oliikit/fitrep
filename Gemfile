@@ -32,6 +32,8 @@ gem 'cocoon', '>= 1.2.0'
 gem 'formtastic', '~> 3.0'
 gem 'formtastic-bootstrap'
 
+gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
 
