@@ -20,22 +20,19 @@
 
     <!--Overall Workout Information -->
     <div class="row">
-
-        <h2>Overall Workout Information</h2>
+      <div class="col-md-4">
+        <h3 class="lead">Overall Workout Information</h3>
         <%= f.inputs do %>
           <%= f.input :workout_focus, :label => "Focus" %>
           <%= f.input :workout_time, :label => "Overall Time"%>
           <%= f.input :workout_intensity, :label => "Intensity" %>
           <%= f.input :workout_notes, :label => "Notes" %>
         <% end %>
-        <hr>
-
-    </div>
+      </div>
 
     <!-- Exercises -->
-    <div class="row">
-      <div class="col-md-10">
-        <h2> Add Exercise </h2>
+      <div class="col-md-8">
+        <h3 class="lead">Add Exercise</h3>
           <div id='exercises'>
             <%= f.semantic_fields_for :exercises do |exercise| %>
               <%= render 'exercise_fields', :f => exercise %>
@@ -47,7 +44,10 @@
       </div>
     </div>
 
+
   <center>
-    <%= f.actions :submit, :cancel %>
+      <%= f.action :submit, :button_html => { :value => 'Submit' } %> <br>
+      <%= f.action :cancel, :button_html => { :value =>  'Cancel' } %>
   </center>
+  <hr>
 <% end %>

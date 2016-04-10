@@ -1,10 +1,12 @@
 <div class='nested-fields'>
   <%= f.inputs do %>
-    <%= f.input :exercise_name, :label => 'Exercise' %>
-    <%= f.input :sets, :label => 'Sets' %>
-    <%= f.input :reps, :label => 'Reps' %>
-    <%= f.input :weight, :label => 'Weight' %>
-    <%= f.input :exercise_time, :label => 'Time' %>
-    <%= link_to_remove_association "x", f %>
+    <div class="row">
+      <div class="col-md-11"><%= f.input :exercise_name, :label => 'Exercise' %></div>
+      <div class="col-md-1"><%= link_to_remove_association "x", f %></div>
+      <div class="col-md-3"><%= f.input :sets, :label => 'Sets' %></div>
+      <div class="col-md-3"><%= f.input :reps, :label => 'Reps' %></div>
+      <div class="col-md-3"><%= f.input :weight, :label => 'Weight' %></div>
+      <div class="col-md-3"><%= f.input :exercise_time, :label => 'Time' %></div>
+    </div>
   <% end %>
 </div>
