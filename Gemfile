@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.1.0'
 source 'https://rails-assets.org' do
   gem 'rails-assets-morrisjs'
   gem 'rails-assets-raphael'
+  gem 'rails-assets-eonasdan-bootstrap-datetimepicker'
 end
 
 # See https://github.com/rails/execjs#readme for more supported runtimes

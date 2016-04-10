@@ -23,6 +23,7 @@
       <div class="col-md-4">
         <h3 class="lead">Overall Workout Information</h3>
         <%= f.inputs do %>
+          <%= f.input :completed_date, :label => "Date" %>
           <%= f.input :workout_focus, :label => "Focus" %>
           <%= f.input :workout_time, :label => "Overall Time"%>
           <%= f.input :workout_intensity, :label => "Intensity" %>
