@@ -1,9 +1,9 @@
-<%= form_for @workout_session do |f| %>
-  <ul>
+<%= semantic_form_for @workout_session do |f| %>
+  <!-- <ul>
   <% @workout_session.errors.full_messages.each do |error| %>
     <li><%= error %></li>
   <% end %>
-  </ul>
+</ul> -->
 
     <!--  To be included for dynamic content:
       <div class="input-group">
@@ -18,71 +18,36 @@
           </ul>
         </div> -->
 
-    <!--Header Workout Information -->
+    <!--Overall Workout Information -->
     <div class="row">
-      <div class="form-group">
-        <label class="col-lg-1 control-label">Workout Focus:</label>
-        <div class="col-lg-9">
-          <%= f.text_field :workout_focus, class:'form-control pull-right', placeholder: "Main Focus" %>
-        </div>
+      <div class="col-md-4">
+        <h3 class="lead">Overall Workout Information</h3>
+        <%= f.inputs do %>
+          <%= f.input :workout_focus, :label => "Focus" %>
+          <%= f.input :workout_time, :label => "Overall Time"%>
+          <%= f.input :workout_intensity, :label => "Intensity" %>
+          <%= f.input :workout_notes, :label => "Notes" %>
+        <% end %>
       </div>
-      <br><hr>
-    </div>
 
     <!-- Exercises -->
-    <div class="row">
-      <div class="col-md-10">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Exercise</th>
-              <th>Sets</th>
-              <th>Repetitions</th>
-              <th>Weight</th>
-              <th>Time</th>
-              <th></th>
-            </tr>
-          </thead>
-        </table>
-
-            <%= f.fields_for :exercises do |exercise| %>
+      <div class="col-md-8">
+        <h3 class="lead">Add Exercise</h3>
+          <div id='exercises'>
+            <%= f.semantic_fields_for :exercises do |exercise| %>
               <%= render 'exercise_fields', :f => exercise %>
             <% end %>
-
-        <div class='links'>
-            <%= link_to_add_association 'add', f, :exercises %>
+            <div class='links'>
+              <%= link_to_add_association 'add', f, :exercises %>
+            </div>
           </div>
       </div>
     </div>
 
-    <hr>
-
-    <div class="row">
-      <div class="col-md-8">
-        <div class="form-group">
-          <label class="col-lg-2 control-label">Workout Time:</label>
-          <div class="col-lg-3">
-            <%= f.text_field :workout_time, class:'form-control pull-right' %>
-          </div><br>
-        </div><br>
-
-        <div class="form-group">
-          <label class="col-lg-2 control-label">Workout Intensity:</label>
-          <div class="col-lg-3">
-            <%= f.text_field :workout_intensity, class:'form-control pull-right' %>
-          </div><br>
-        </div><br>
-
-        <div class="form-group">
-          <label class="col-lg-2 control-label">Workout Notes:</label>
-          <div class="col-lg-3">
-            <%= f.text_field :workout_notes, class:'form-control pull-right' %>
-          </div>
-        </div><br>
-      </div>
-    </div>
 
   <center>
-    <%= f.submit 'Submit', class:'btn btn-success' %>
+      <%= f.action :submit, :button_html => { :value => 'Submit' } %> <br>
+      <%= f.action :cancel, :button_html => { :value =>  'Cancel' } %>
   </center>
+  <hr>
 <% end %>

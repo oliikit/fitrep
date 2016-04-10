@@ -1,26 +1,12 @@
 <div class='nested-fields'>
-  <table>
-  <tbody>
-    <tr>
-      <td>
-        <%= f.text_field :exercise_name, class:'form-control' %>
-      </td>
-      <td>
-        <%= f.text_field :sets, class:'form-control' %>
-      </td>
-      <td>
-        <%= f.text_field :reps, class:'form-control' %>
-      </td>
-      <td>
-        <%= f.text_field :weight, class:'form-control' %>
-      </td>
-      <td>
-        <%= f.text_field :exercise_time, class:'form-control' %>
-      </td>
-      <td>
-        <%= link_to_remove_association "x", f %>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  <%= f.inputs do %>
+    <div class="row">
+      <div class="col-md-11"><%= f.input :exercise_name, :label => 'Exercise' %></div>
+      <div class="col-md-1"><%= link_to_remove_association "x", f %></div>
+      <div class="col-md-3"><%= f.input :sets, :label => 'Sets' %></div>
+      <div class="col-md-3"><%= f.input :reps, :label => 'Reps' %></div>
+      <div class="col-md-3"><%= f.input :weight, :label => 'Weight' %></div>
+      <div class="col-md-3"><%= f.input :exercise_time, :label => 'Time' %></div>
+    </div>
+  <% end %>
 </div>
