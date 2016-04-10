@@ -1,9 +1,33 @@
 <h2 class="lead"><b>Workout Satistics</b></h2>
-<ul>
-  <li>Average Workout Time</li>
-  <li>Last Workout Focus</li>
-  <li>Personal Records</li>
-</ul>
+
+  <div class="row">
+
+    <div class="col-lg-8">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+              Overall Workout Time
+            </div>
+            <div class="panel-body">
+              <%= content_tag :div, "", id: "workout-time-chart", data: {workout_sessions: time_data} %>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            Workout Focus
+          </div>
+          <div class="panel-body">
+            <ul>
+              <li><b>Average Workout Time:</b> <%= average_workout_time %></li>
+              <li><b>Last Workout Focus:</b> <%= last_workout_focus %></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+  </div>
 
 <hr>
 
@@ -11,10 +35,10 @@
 <h2 class="lead"><b>Past Workouts</b></h2>
 <div class="row-fluid">
   <% @workout_sessions.each do |workout_session| %>
-    <div class="col-md-4">
-      <div class="panel panel-info">
+    <div class="col-md-3">
+      <div class="panel panel-primary">
         <div class="panel-heading">
-          <%= link_to "Workout Focus: " + workout_session.workout_focus, workout_session_path(workout_session), class: "btn btn-block btn-md" %>
+          <%= link_to "Workout Focus: " + workout_session.workout_focus, workout_session_path(workout_session), class: "btn btn-block btn-info" %>
         </div>
         <div class="panel-body">
           <p>
@@ -27,7 +51,7 @@
             <div class="col-md-2">
               <%= link_to "Edit", edit_workout_session_path(workout_session), class:'btn btn-success' %>
             </div>
-            <div class="col-md-3 col-md-offset-7">
+            <div class="col-md-4 col-md-offset-6">
               <%= link_to "Delete", workout_session_path(workout_session), method: :delete, data: {confirm: "really delete this session?"}, class:'btn btn-danger' %>
             </div>
           </div>
