@@ -11,22 +11,30 @@
 <h2 class="lead"><b>Past Workouts</b></h2>
 <div class="row-fluid">
   <% @workout_sessions.each do |workout_session| %>
-    <div class="btn-group btn-lg btn-block">
-        <div class="col-md-7 col-md-offset-1">
-          <%= link_to "Workout Focus: " + workout_session.workout_focus, workout_session_path(workout_session), class: "btn btn-block btn-lg list-group-item" %>
+    <div class="col-md-4">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <%= link_to "Workout Focus: " + workout_session.workout_focus, workout_session_path(workout_session), class: "btn btn-block btn-md" %>
         </div>
-        <div class="btn-group col-md-1">
-          <button type="button" class="btn btn-default btn-lg dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu">
-            <li class="dropdown-header">Brief Summary:</li>
-            <li class="dropdown-item"><p>Workout Time: <%= workout_session.workout_time %></p></li>
-            <li class="dropdown-item"><p>Workout Intensity: <%= workout_session.workout_time %></p></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Edit</a></li>
-          </ul>
+        <div class="panel-body">
+          <p>
+            <b>Type of Workout:</b> <%=  %><br>
+            <b>Workout Time:</b> <%= workout_session.workout_time %><br>
+            <b>Workout Intensity:</b> <%= workout_session.workout_intensity %><br>
+            <b>Completed:</b> <%=  %>
+          </p>
+          <div class="row">
+            <div class="col-md-2">
+              <%= link_to "Edit", edit_workout_session_path(workout_session), class:'btn btn-success' %>
+            </div>
+            <div class="col-md-3 col-md-offset-7">
+              <%= link_to "Delete", workout_session_path(workout_session), method: :delete, data: {confirm: "really delete this session?"}, class:'btn btn-danger' %>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+
+
   <% end %>
 </div>
