@@ -1,5 +1,8 @@
 //= require jquery
 //= require jquery_ujs
+//= require moment
+//= require bootstrap-datetimepicker
+//= require pickers
 //= require raphael
 //= require morrisjs
 //= require cocoon

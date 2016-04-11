@@ -28,8 +28,11 @@ gem 'jquery-rails'
 
 gem 'cocoon', '>= 1.2.0'
 
-gem 'formtastic', '~> 3.0'
-gem 'formtastic-bootstrap'
+gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+gem 'simple_form'
+gem 'font-awesome-rails'
+
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
