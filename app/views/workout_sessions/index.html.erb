@@ -32,7 +32,7 @@
 <hr>
 
 
-<h2 class="lead"><b>Past Workouts</b></h2>
+<h2 class="lead"><b>Completed Workouts</b></h2>
 <div class="row-fluid">
   <% @workout_sessions.each do |workout_session| %>
     <div class="col-md-3">
@@ -42,10 +42,10 @@
         </div>
         <div class="panel-body">
           <p>
-            <b>Type of Workout:</b> <%=  %><br>
+            <b>Type of Workout:</b> <%= workout_session.workout_type %><br>
             <b>Workout Time:</b> <%= workout_session.workout_time %><br>
             <b>Workout Intensity:</b> <%= workout_session.workout_intensity %><br>
-            <b>Completed:</b> <%=  %>
+            <b>Completed:</b> <%= workout_session.completed_date %>
           </p>
           <div class="row">
             <div class="col-md-2">

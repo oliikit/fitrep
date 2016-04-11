@@ -1,9 +1,4 @@
-<%= semantic_form_for @workout_session do |f| %>
-  <!-- <ul>
-  <% @workout_session.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
-  <% end %>
-</ul> -->
+<%= simple_form_for @workout_session do |f| %>
 
     <!--  To be included for dynamic content:
       <div class="input-group">
@@ -22,20 +17,19 @@
     <div class="row">
       <div class="col-md-4">
         <h3 class="lead">Overall Workout Information</h3>
-        <%= f.inputs do %>
-          <%= f.input :completed_date, :label => "Date" %>
-          <%= f.input :workout_focus, :label => "Focus" %>
-          <%= f.input :workout_time, :label => "Overall Time"%>
-          <%= f.input :workout_intensity, :label => "Intensity" %>
-          <%= f.input :workout_notes, :label => "Notes" %>
-        <% end %>
+        <%= f.input :completed_date, :as => :date_picker, :label => 'Completed' %>
+        <%= f.input :workout_type, :label => "Type" %>
+        <%= f.input :workout_focus, :label => "Focus" %>
+        <%= f.input :workout_time, :label => "Overall Time"%>
+        <%= f.input :workout_intensity, :label => "Intensity" %>
+        <%= f.input :workout_notes, :label => "Notes" %>
       </div>
 
     <!-- Exercises -->
       <div class="col-md-8">
         <h3 class="lead">Add Exercise</h3>
           <div id='exercises'>
-            <%= f.semantic_fields_for :exercises do |exercise| %>
+            <%= f.simple_fields_for :exercises do |exercise| %>
               <%= render 'exercise_fields', :f => exercise %>
             <% end %>
             <div class='links'>
@@ -47,8 +41,8 @@
 
 
   <center>
-      <%= f.action :submit, :button_html => { :value => 'Submit' } %> <br>
-      <%= f.action :cancel, :button_html => { :value =>  'Cancel' } %>
+      <%= f.submit 'Save', {:class => 'btn btn-primary'} %>
+      <%= link_to "Cancel", :back, {:class=>"btn "} %>
   </center>
   <hr>
 <% end %>

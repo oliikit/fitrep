@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20160410192936) do
     t.integer  "workout_intensity"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.datetime "completed_date"
+    t.date     "completed_date"
     t.string   "workout_type"
   end
 

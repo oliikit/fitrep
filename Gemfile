@@ -18,7 +18,6 @@ gem 'coffee-rails', '~> 4.1.0'
 source 'https://rails-assets.org' do
   gem 'rails-assets-morrisjs'
   gem 'rails-assets-raphael'
-  gem 'rails-assets-eonasdan-bootstrap-datetimepicker'
 end
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -29,10 +28,11 @@ gem 'jquery-rails'
 
 gem 'cocoon', '>= 1.2.0'
 
-gem 'formtastic', '~> 3.0'
-gem 'formtastic-bootstrap'
-
 gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
+gem 'simple_form'
+gem 'font-awesome-rails'
+
+gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'

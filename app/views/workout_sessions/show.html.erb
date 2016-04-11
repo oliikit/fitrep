@@ -1,24 +1,38 @@
-  <h1><%= @workout_session.workout_focus %></h1>
+  <h1>Workout on <%= @workout_session.workout_focus %></h1>
 
   <div class="row">
-    <div class="col-md-5 ">
+    <div class="col-md-10 ">
+      <h2>Type of workout: <%= @workout_session.workout_type %></h2>
+      <h3>Completed on <%= @workout_session.completed_date %></h3>
       <blockquote>
-        <% @exercises.each do |e| %>
-          <p><strong>Exercise:</strong> <%= e.exercise_name %><br>
-            <strong>Number of Sets:</strong> <%= e.sets %><br>
-            <strong>Number of Reps:</strong> <%= e.reps %><br>
-            <strong>Weight:</strong> <%= e.weight %><br>
-            <strong>Exercise Time:</strong> <%= e.exercise_time %><br></p>
-        <% end %>
-          <hr>
           <p><strong>Workout Time:</strong> <%= @workout_session.workout_time %><br>
             <strong>Workout Intensity:</strong> <%= @workout_session.workout_intensity %><br>
           <hr>
         <p><strong>Wokout Notes:</strong> <%= @workout_session.workout_notes %><br></p>
+        <hr>
+
+        <div class="row">
+            <% @exercises.each do |e| %>
+            <div class="col-md-3">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <p>
+                    <b>Exercise:</b> <%= e.exercise_name %><br>
+                    Number of Sets: <%= e.sets %><br>
+                    Number of Reps: <%= e.reps %><br>
+                    Weight: <%= e.weight %><br>
+                    Time: <%= e.exercise_time %><br>
+                  </p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+
       </blockquote>
 
     </div>
-    <div class="col-md-3 col-md-push-2">
+    <div class="col-md-2">
       <%= link_to "Edit", edit_workout_session_path(@workout_session), class:'btn btn-primary' %>
       <%= link_to "Delete", workout_session_path(@workout_session), method: :delete, data: {confirm: "really delete this session?"}, class:'btn btn-danger' %>
     </div>
