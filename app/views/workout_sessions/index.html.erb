@@ -5,7 +5,7 @@
     <div class="col-lg-8">
         <div class="panel panel-info">
             <div class="panel-heading">
-              Overall Workout Time
+              This Week's Workout Time
             </div>
             <div class="panel-body">
               <%= content_tag :div, "", id: "workout-time-chart", data: {workout_sessions: time_data} %>
@@ -16,11 +16,12 @@
       <div class="col-lg-4">
         <div class="panel panel-success">
           <div class="panel-heading">
-            Workout Focus
+            Insights
           </div>
           <div class="panel-body">
             <ul>
               <li><b>Average Workout Time:</b> <%= average_workout_time %></li>
+              <li><b>Last Workout On:</b> <%= last_workout_date %></li>
               <li><b>Last Workout Focus:</b> <%= last_workout_focus %></li>
             </ul>
           </div>
