@@ -17,7 +17,7 @@
     <div class="row">
       <div class="col-md-4">
         <h3 class="lead">Overall Workout Information</h3>
-        <%= f.input :completed_date, :as => :date_picker, :label => 'Completed' %>
+        <%= f.input :completed_date, :as => :date_picker, :label => 'Completed', input_html: { value: Time.now.strftime("%d/%m/%Y") } %>
         <%= f.input :workout_type, :label => "Type" %>
         <%= f.input :workout_focus, :label => "Focus" %>
         <%= f.input :workout_time, :label => "Overall Time"%>
