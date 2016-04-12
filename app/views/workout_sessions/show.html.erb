@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-md-10 ">
       <h2>Type of workout: <%= @workout_session.workout_type %></h2>
-      <h3>Completed on <%= @workout_session.completed_date %></h3>
+      <h3>Completed on <%= @workout_session.completed_date.to_s(:long) %></h3>
       <blockquote>
           <p><strong>Workout Time:</strong> <%= @workout_session.workout_time %><br>
             <strong>Workout Intensity:</strong> <%= @workout_session.workout_intensity %><br>

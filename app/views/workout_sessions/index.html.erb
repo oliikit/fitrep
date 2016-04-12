@@ -46,7 +46,7 @@
             <b>Type of Workout:</b> <%= workout_session.workout_type %><br>
             <b>Workout Time:</b> <%= workout_session.workout_time %><br>
             <b>Workout Intensity:</b> <%= workout_session.workout_intensity %><br>
-            <b>Completed:</b> <%= workout_session.completed_date %>
+            <b>Completed:</b> <%= workout_session.completed_date.to_s(:long) %>
           </p>
           <div class="row">
             <div class="col-md-2">

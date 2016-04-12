@@ -12,7 +12,7 @@ module WorkoutSessionsHelper
 
   def last_workout_date
     @last = WorkoutSession.select("completed_date, id").last
-    @last.completed_date
+    @last.completed_date.to_s(:long)
   end
 
 end
