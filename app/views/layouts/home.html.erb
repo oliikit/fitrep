@@ -6,12 +6,17 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
   </head>
 
   <body>
-    <nav class="navbar navbar-default">
-      <div class="container">
-        <%= link_to "fitrep", root_path, class: "navbar-text" %>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="btn btn-default navbar-btn">
+            <i class="fa fa-bolt" aria-hidden="true"></i> <%= link_to "   fitrep", root_path %>
+          </button>
+        </div>
       </div>
     </nav>
 

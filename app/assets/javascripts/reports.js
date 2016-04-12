@@ -2,7 +2,7 @@ $(function() {
   new Morris.Line({
     element: 'workout-time-chart',
     data: $('#workout-time-chart').data("workoutSessions"),
-    xkey: 'created_at',
+    xkey: 'completed_date',
     ykeys: ['workout_time'],
     labels: ['Time'],
     hideHover: 'auto',
