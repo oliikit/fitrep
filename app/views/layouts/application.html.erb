@@ -16,7 +16,9 @@
         </button>
       </div>
       <ul class="nav navbar-top-links navbar-right">
-        <%= link_to "Create New Workout", new_workout_session_path, class: "new_workout_session btn navbar-btn btn-success" %>
+        <button type="button" class="new_workout_session btn navbar-btn btn-success">
+          <i class="fa fa-plus" aria-hidden="true"></i><%= link_to "", new_workout_session_path %>
+        </button>
       </ul>
     </div>
   </nav>
