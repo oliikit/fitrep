@@ -19,6 +19,7 @@ class WorkoutSessionsController < ApplicationController
     @workout_session = WorkoutSession.new(workout_session_params)
     @exercise = @workout_session.exercises.build
     if @workout_session.save
+      @workout_session.workout_time = (@workout_session.hour * 60) + @workout_session.minute
       @exercise.save
       redirect_to workout_session_path(@workout_session)
     else
@@ -49,7 +50,7 @@ class WorkoutSessionsController < ApplicationController
 
   private
     def workout_session_params
-      params.require(:workout_session).permit(:workout_notes,:workout_focus, :workout_intensity, :workout_time, :completed_date, :workout_type,
+      params.require(:workout_session).permit(:workout_notes,:workout_focus, :workout_intensity, :workout_time, :completed_date, :workout_type, :hour, :minute,
                       exercises_attributes:[:id, :workout_session_id, :exercise_name, :sets, :reps, :weight, :exercise_time, :_destroy])
     end
 end
