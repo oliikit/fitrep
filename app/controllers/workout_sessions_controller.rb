@@ -19,7 +19,6 @@ class WorkoutSessionsController < ApplicationController
     @workout_session = WorkoutSession.new(workout_session_params)
     @exercise = @workout_session.exercises.build
     if @workout_session.save
-      @workout_session.workout_time = (@workout_session.hour * 60) + @workout_session.minute
       @exercise.save
       redirect_to workout_session_path(@workout_session)
     else

@@ -20,14 +20,11 @@
         <%= f.input :completed_date, :as => :date_picker, :label => 'Completed', input_html: { value: Time.now.strftime("%d/%m/%Y") } %>
         <%= f.input :workout_type, :label => "Type" %>
         <%= f.input :workout_focus, :label => "Focus" %>
-        <div class="col-md-3">
+        <div class="col-md-6">
           <%= f.input :hour, :label => "Hours"%>
         </div>
-        <div class="col-md-3">
-          <%= f.input :minute, :label => "Minutes"%>
-        </div>
         <div class="col-md-6">
-          <%= f.input :workout_time, :label => "Overall Time"%>
+          <%= f.input :minute, :label => "Minutes"%>
         </div>
         <%= f.input :workout_intensity, :label => "Intensity" %>
         <%= f.input :workout_notes, :label => "Notes" %>
