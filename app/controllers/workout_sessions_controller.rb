@@ -1,5 +1,6 @@
 class WorkoutSessionsController < ApplicationController
   include WorkoutSessionsHelper
+  before_action :authenticate_user!
 
   def index
     @workout_sessions = WorkoutSession.all
