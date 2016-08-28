@@ -4,6 +4,7 @@
   <title>fitrep</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:600i" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= csrf_meta_tags %>
 </head>
@@ -11,8 +12,8 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="btn btn-default navbar-btn">
-          <i class="fa fa-bolt" aria-hidden="true"></i> <%= link_to "   fitrep", root_path %>
+        <button type="button" class="btn btn-default navbar-btn logo">
+          <%= link_to "FiTREP", root_path %>
         </button>
       </div>
       <div class="nav navbar-nav navbar-right">
@@ -20,14 +21,13 @@
           <%= link_to new_workout_session_path, class: "new_workout_session btn navbar-btn btn-success" do %>
             <i class="fa fa-plus" aria-hidden="true"></i>
           <% end %>
-          <li><%= link_to "Users", '#' %></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               Account <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", '#' %></li>
-              <li><%= link_to "Settings", '#' %></li>
+              <li><%= link_to "Settings", edit_user_password_path %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to "Log out", destroy_user_session_path, method: :delete %>
@@ -43,8 +43,8 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-2">
-        <ul class="nav nav-pills nav-stacked">
+      <div>
+        <ul class="nav nav-tabs">
           <li role="presentation"><%= link_to "Dashboard", workout_sessions_path %></li>
           <li role="presentation"><%= link_to "Reports", reports_path %></li>
           <li role="presentation"><%= link_to "Upcoming Features", news_path %></li>
