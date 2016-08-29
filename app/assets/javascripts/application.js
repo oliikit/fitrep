@@ -1,12 +1,12 @@
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require moment
 //= require bootstrap-datetimepicker
 //= require pickers
 //= require raphael
 //= require morrisjs
 //= require cocoon
-//= require bootstrap-sprockets
-//= require bootstrap
+//= require jquery.slimscroll
 //= require app
 //= require_tree .

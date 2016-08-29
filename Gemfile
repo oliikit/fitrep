@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 gem 'bundler', '>=1.8.4'
 
-
 gem 'rails', '4.2.4'
-gem 'autoprefixer-rails'
 
 # User management
 gem 'devise', '4.2.0'
@@ -12,8 +10,6 @@ gem 'devise', '4.2.0'
 gem 'sass-rails', '~> 5.0'
 
 # AdminLTE Theme
-gem 'bootstrap-sass', '3.3.7'
-
 source 'https://rails-assets.org' do
   gem 'rails-assets-morrisjs'
   gem 'rails-assets-raphael'
