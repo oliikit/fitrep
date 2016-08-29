@@ -1,43 +1,39 @@
 source 'https://rubygems.org'
 gem 'bundler', '>=1.8.4'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
 gem 'rails', '4.2.4'
-gem 'bootstrap-sass', '3.3.7'
 gem 'autoprefixer-rails'
 
+# User management
 gem 'devise', '4.2.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+# AdminLTE Theme
+gem 'bootstrap-sass', '3.3.7'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-morrisjs'
   gem 'rails-assets-raphael'
 end
 
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'adminlte2-rails'
 
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '~> 4.1.0'
 
+# For forms
 gem 'cocoon', '>= 1.2.0'
-
 gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
 gem 'simple_form'
 gem 'font-awesome-rails'
-
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-#gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -47,12 +43,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
  gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -14,7 +14,8 @@
  *= require font-awesome
  *= require bootstrap-datetimepicker
  *= require_tree .
+ *= require bootstrap
+ *= require AdminLTE/AdminLTE
+ *= require AdminLTE/skins/skin-purple
  *= require_self
  */
-@import "bootstrap-sprockets"
-@import "bootstrap"

@@ -7,4 +7,6 @@
 //= require morrisjs
 //= require cocoon
 //= require bootstrap-sprockets
+//= require bootstrap
+//= require app
 //= require_tree .

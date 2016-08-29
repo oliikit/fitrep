@@ -53,6 +53,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    adminlte2-rails (0.0.5)
     arel (6.0.3)
     autoprefixer-rails (6.4.0.3)
       execjs
@@ -196,6 +197,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  adminlte2-rails
   autoprefixer-rails
   bcrypt (~> 3.1.7)
   bootstrap-sass (= 3.3.7)
