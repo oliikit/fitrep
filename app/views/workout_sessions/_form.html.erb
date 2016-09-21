@@ -15,39 +15,71 @@
 
     <!--Overall Workout Information -->
     <div class="row">
-      <div class="col-md-4">
-        <h3 class="lead">Overall Workout Information</h3>
-        <%= f.input :completed_date, :as => :date_picker, :label => 'Completed', input_html: { value: Time.now.strftime("%d/%m/%Y") } %>
-        <%= f.input :workout_type, :label => "Type" %>
-        <%= f.input :workout_focus, :label => "Focus" %>
-        <div class="col-md-6">
-          <%= f.input :hour, :label => "Hours"%>
-        </div>
-        <div class="col-md-6">
-          <%= f.input :minute, :label => "Minutes"%>
-        </div>
-        <%= f.input :workout_intensity, :label => "Intensity" %>
-        <%= f.input :workout_notes, :label => "Notes" %>
-      </div>
-
-    <!-- Exercises -->
-      <div class="col-md-8">
-        <h3 class="lead">Add Exercise</h3>
-          <div id='exercises'>
-            <%= f.simple_fields_for :exercises do |exercise| %>
-              <%= render 'exercise_fields', :f => exercise %>
-            <% end %>
-            <div class='links'>
-              <%= link_to_add_association 'add', f, :exercises %>
+      <div class="col-md-offset-2">
+        <div class="col-lg-10">
+          <div class="box">
+            <div class="box box-default">
+              <div class="box-header with-border">
+                <div class="col-xs-6">
+                  <%= f.input :completed_date, :as => :date_picker, :label => 'Completed', input_html: { value: Time.now.strftime("%d/%m/%Y") } %>
+                </div>
+                <div class="col-xs-3">
+                  <%= f.input :hour, :label => "Hours"%>
+                </div>
+                <div class="col-xs-3">
+                  <%= f.input :minute, :label => "Minutes"%>
+                </div>
+              </div>
+            </div>
+            <div class="box-body">
+              <div class="col-xs-6">
+                <%= f.input :workout_type, :label => "Type" %>
+              </div>
+              <div class="col-xs-6">
+                <%= f.input :workout_focus, :label => "Focus" %>
+              </div>
+              <div class="col-xs-12">
+                <b>Intensity</b><br />
+                <%= f.text_field :workout_intensity, id: 'intensitySlider', type: 'text', data: {  'slider-min' => '1'  } %>
+              </div>
+              <div class="col-xs-12">
+                <button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#exerciseModal">
+                  Add Exercises
+                </button>
+              </div>
+            </div>
+            <div class="box-footer">
+              <%= f.input :workout_notes, :label => "Notes" %>
             </div>
           </div>
+        </div>
       </div>
     </div>
 
+    <!-- Exercise Modal -->
+    <div class="modal fade" id="exerciseModal" tabindex="-1" role="dialog" aria-labelledby="exerciseModalLabel">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Add Exercise</h4>
+          </div>
+          <div class="modal-body">
+            <%= f.simple_fields_for :exercises do |exercise| %>
+              <%= render 'exercise_fields', :f => exercise %>
+            <% end %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+            <%= link_to_add_association "Add Exercise", f, :exercises, class: "new_workout_session btn btn-success" %>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <center>
-      <%= f.submit 'Save', {:class => 'btn btn-primary'} %>
-      <%= link_to "Cancel", :back, {:class=>"btn "} %>
+      <%= f.submit 'Save', {:class => 'btn btn-success'} %>
+      <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
   </center>
   <hr>
 <% end %>

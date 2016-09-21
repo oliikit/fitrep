@@ -40,6 +40,7 @@ class WorkoutSessionsController < ApplicationController
 
   def update
     @workout_session = WorkoutSession.find(params[:id])
+    @exercises = @workout_session.exercises
     if @workout_session.update_attributes(workout_session_params)
       @workout_session.update(workout_session_params)
       redirect_to workout_session_path(@workout_session)

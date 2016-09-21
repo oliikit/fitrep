@@ -8,5 +8,6 @@
 //= require morrisjs
 //= require cocoon
 //= require jquery.slimscroll
+//= require bootstrap-slider
 //= require app
 //= require_tree .
